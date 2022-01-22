@@ -28,6 +28,7 @@ const TableComponent = ({ data }) => {
   useEffect(() => {
     const favouriteList = fetchFavourite();
     if (
+      favouriteList &&
       favouriteList.find(function (element) {
         return element.ifsc === ifsc;
       })
