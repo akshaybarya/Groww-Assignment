@@ -81,9 +81,10 @@ const AllBanks = () => {
   }, [city]);
 
   useEffect(() => {
-    setCurrentData(
-      filteredData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-    );
+    if (filteredData)
+      setCurrentData(
+        filteredData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+      );
   }, [page, allBankData, filteredData, rowsPerPage]);
 
   //delay in search
