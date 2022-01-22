@@ -155,8 +155,14 @@ const AllBanks = () => {
           </TableHead>
           <TableBody>
             {currentData &&
-              currentData.map((data) => {
-                return <TableComponent data={data} key={data.ifsc} />;
+              currentData.map((data, index) => {
+                return (
+                  <TableComponent
+                    data={data}
+                    key={data.ifsc}
+                    toggle={index % 2 === 0}
+                  />
+                );
               })}
           </TableBody>
         </Table>

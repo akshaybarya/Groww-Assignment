@@ -13,6 +13,14 @@ import {
 const useStyles = makeStyles((theme) => ({
   tableHead: {
     height: 60,
+
+    "&:nth-of-type(even)": {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    "&:last-child td, &:last-child th": {
+      border: 0,
+    },
   },
 }));
 

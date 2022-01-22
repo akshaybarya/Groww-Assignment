@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     tableLayout: "fixed",
     width: "100%",
     height: "100%",
+    backgroundColor: theme.palette.action.hover,
   },
   TableHead: {
     backgroundColor: "#00d09c",
