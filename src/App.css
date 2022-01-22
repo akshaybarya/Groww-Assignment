@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  margin-bottom: 0%;
+}
+
+.Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Spinner {
+  margin-top: 30vh;
+}
+
+.PagesContainer {
+  margin-top: 50px;
+}
