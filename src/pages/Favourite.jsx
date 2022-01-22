@@ -40,7 +40,7 @@ const tableHeadings = [
   "BRANCH",
   "BANK ID",
   "ADDRESS",
-  "REMOVE FROM FAVOURITE",
+  "REMOVE",
 ];
 
 const Favourite = () => {
