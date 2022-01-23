@@ -54,42 +54,7 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item>
-              <FormControl
-                variant="outlined"
-                color="secondary"
-                className={classes.InnerComponent2}
-                size="medium"
-              >
-                <Select
-                  defaultValue="Bank"
-                  value={type}
-                  onChange={(e) => {
-                    setType(e.target.value);
-                  }}
-                  MenuProps={{
-                    anchorOrigin: {
-                      vertical: "bottom",
-                      horizontal: "left",
-                    },
-                    transformOrigin: {
-                      vertical: "top",
-                      horizontal: "left",
-                    },
-                    getContentAnchorEl: null,
-                  }}
-                >
-                  {categories &&
-                    categories.map((category) => {
-                      return (
-                        <MenuItem value={category.value} key={category.value}>
-                          {category.name}
-                        </MenuItem>
-                      );
-                    })}
-                </Select>
-              </FormControl>
-            </Grid>
+
             <Grid item>
               <FormControl
                 color="secondary"
@@ -121,6 +86,42 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
                       return (
                         <MenuItem value={city} key={city}>
                           {city}
+                        </MenuItem>
+                      );
+                    })}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <FormControl
+                variant="outlined"
+                color="secondary"
+                className={classes.InnerComponent2}
+                size="medium"
+              >
+                <Select
+                  defaultValue="Bank"
+                  value={type}
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
+                  MenuProps={{
+                    anchorOrigin: {
+                      vertical: "bottom",
+                      horizontal: "left",
+                    },
+                    transformOrigin: {
+                      vertical: "top",
+                      horizontal: "left",
+                    },
+                    getContentAnchorEl: null,
+                  }}
+                >
+                  {categories &&
+                    categories.map((category) => {
+                      return (
+                        <MenuItem value={category.value} key={category.value}>
+                          {category.name}
                         </MenuItem>
                       );
                     })}
