@@ -1,6 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
+  Container: {
+    paddingBottom: 125,
+    [theme.breakpoints.down("md")]: {
+      paddingBottom: 50,
+    },
+  },
   Table: {
     minWidth: 1100,
     tableLayout: "fixed",

@@ -1,24 +1,13 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
-  Container: {
-    height: 60,
-    [theme.breakpoints.down("md")]: {
-      height: "inherit",
-    },
+  Link: {
+    textDecoration: "none",
+    color: "blue",
+    fontSize: "20px",
   },
-  LogoBox: {
-    flexGrow: 1,
-    display: "flex",
-    alignItems: "start",
-  },
-  Logo: {
-    fontWeight: "bold",
-    marginLeft: 50,
-    [theme.breakpoints.down("md")]: {
-      fontSize: 12,
-      marginLeft: 5,
-    },
+  Icon: {
+    color: "white",
   },
   Button1: {
     marginRight: 40,

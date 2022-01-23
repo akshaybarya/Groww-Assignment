@@ -68,7 +68,7 @@ const Favourite = () => {
 
   return (
     <div>
-      <Container style={{ paddingBottom: 125 }}>
+      <Container className={classes.Container}>
         <Appbar />
         <TableContainer
           component={Paper}

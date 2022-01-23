@@ -96,7 +96,7 @@ const AllBanks = () => {
     return <Spinner />;
   }
   return (
-    <Container style={{ paddingBottom: 125 }}>
+    <Container className={classes.Container}>
       <Appbar
         search={search}
         setSearch={setSearch}
