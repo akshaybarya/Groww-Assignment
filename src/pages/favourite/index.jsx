@@ -33,6 +33,7 @@ const Favourite = () => {
   const [bankData, setbankData] = useState([]);
   const [currentData, setCurrentData] = useState([]);
   const [page, setPage] = useState(0);
+  const [sortValue, setSortValue] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [tableHeadClassName, setTableHeadClassName] =
     useState("TableHeadActive");
@@ -50,6 +51,11 @@ const Favourite = () => {
       bankData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
     );
   }, [page, bankData, rowsPerPage]);
+
+  const sort = (e) => {
+    setSortValue(!sortValue);
+    setbankData([...bankData].reverse());
+  };
 
   // Pagination Functions
 
@@ -69,7 +75,7 @@ const Favourite = () => {
   return (
     <div>
       <Container className={classes.Container}>
-        <Appbar />
+        <Appbar sortValue={sortValue} setSortValue={sort} />
         <TableContainer
           component={Paper}
           onMouseEnter={(e) => setTableHeadClassName("TableHeadIncative")}

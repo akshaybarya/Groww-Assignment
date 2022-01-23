@@ -33,7 +33,7 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
     <Container maxWidth="xl" className={classes.Container}>
       <Toolbar disableGutters className={classes.Toolbar}>
         <Box className={classes.LogoBox}>
-          <Typography variant="h4" component="h2">
+          <Typography variant="h5" component="h2">
             ALL BANKS
           </Typography>
         </Box>
