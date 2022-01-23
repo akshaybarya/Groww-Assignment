@@ -18,27 +18,27 @@ import { fetchBankData } from "../utils/localStorageFunctions";
 // Creating Styles
 const useStyles = makeStyles((theme) => ({
   Container: {
-    marginTop: 80,
+    marginTop: 140,
   },
   Table: {
     minWidth: 650,
     tableLayout: "fixed",
     width: "100%",
     height: "100%",
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.primary.dark,
   },
   TableHead: {
-    backgroundColor: "#00d09c",
+    backgroundColor: theme.palette.primary.main,
   },
   TableHeading: {
-    color: "#FFFF",
+    color: theme.palette.primary.contrastText,
     fontWeight: "bold",
   },
   TableBodyCell: {
     borderBottom: "0",
-    height: 75,
-    paddingLeft: 150,
-    paddingRight: 150,
+    height: 55,
+    paddingLeft: 170,
+    paddingRight: 170,
     fontSize: 13,
     fontWeight: "bold",
   },

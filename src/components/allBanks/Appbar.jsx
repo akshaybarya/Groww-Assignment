@@ -4,6 +4,7 @@ import {
   Box,
   Container,
   FormControl,
+  Grid,
   makeStyles,
   MenuItem,
   Select,
@@ -11,6 +12,7 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
+import FilterListIcon from "@material-ui/icons/FilterList";
 
 const cities = ["Mumbai", "Delhi", "Chennai", "Pune", "Jaipur"];
 
@@ -35,20 +37,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "start",
   },
 
+  Toolbar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
   InnerComponent1: {
-    marginleft: 0,
-    marginRight: 20,
     width: 250,
-    padding: 0,
   },
   InnerComponent2: {
-    marginleft: 20,
-    marginRight: 20,
     width: 150,
   },
   InnerComponent3: {
-    marginleft: 20,
-    marginRight: 0,
     width: 150,
   },
 }));
@@ -60,7 +61,7 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
 
   return (
     <Container maxWidth="xl" className={classes.Container}>
-      <Toolbar disableGutters>
+      <Toolbar disableGutters className={classes.Toolbar}>
         <Box className={classes.LogoBox}>
           <Typography variant="h4" component="h2">
             ALL BANKS
@@ -68,84 +69,108 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
         </Box>
 
         <Box>
-          <TextField
-            variant="outlined"
-            label="Filter Search"
-            size="medium"
-            className={classes.InnerComponent1}
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-            }}
-          />
-          <FormControl
-            variant="outlined"
-            className={classes.InnerComponent2}
-            size="medium"
-          >
-            <Select
-              defaultValue="Bank"
-              value={type}
-              onChange={(e) => {
-                setType(e.target.value);
-              }}
-              MenuProps={{
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
-            >
-              {categories &&
-                categories.map((category) => {
-                  return (
-                    <MenuItem value={category.value} key={category.value}>
-                      {category.name}
-                    </MenuItem>
-                  );
-                })}
-            </Select>
-          </FormControl>
-
-          <FormControl
-            variant="outlined"
-            className={classes.InnerComponent3}
-            style={{ marginRight: 0 }}
-            size="medium"
-          >
-            <Select
-              defaultValue="Mumbai"
-              value={city}
-              onChange={(e) => {
-                setCity(e.target.value);
-              }}
-              MenuProps={{
-                anchorOrigin: {
-                  vertical: "bottom",
-                  horizontal: "left",
-                },
-                transformOrigin: {
-                  vertical: "top",
-                  horizontal: "left",
-                },
-                getContentAnchorEl: null,
-              }}
-            >
-              {cities &&
-                cities.map((city) => {
-                  return (
-                    <MenuItem value={city} key={city}>
-                      {city}
-                    </MenuItem>
-                  );
-                })}
-            </Select>
-          </FormControl>
+          <Grid container spacing={3}>
+            <Grid item>
+              <Box display="flex" alignItems="center" height="100%">
+                <Typography variant="overline" color="textSecondary">
+                  Filter &nbsp;
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <FilterListIcon
+                    size="large"
+                    color="inherit"
+                    fontSize="large"
+                  />
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item>
+              <FormControl
+                variant="outlined"
+                color="secondary"
+                className={classes.InnerComponent2}
+                size="medium"
+              >
+                <Select
+                  defaultValue="Bank"
+                  value={type}
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
+                  MenuProps={{
+                    anchorOrigin: {
+                      vertical: "bottom",
+                      horizontal: "left",
+                    },
+                    transformOrigin: {
+                      vertical: "top",
+                      horizontal: "left",
+                    },
+                    getContentAnchorEl: null,
+                  }}
+                >
+                  {categories &&
+                    categories.map((category) => {
+                      return (
+                        <MenuItem value={category.value} key={category.value}>
+                          {category.name}
+                        </MenuItem>
+                      );
+                    })}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <FormControl
+                color="secondary"
+                variant="outlined"
+                className={classes.InnerComponent3}
+                style={{ marginRight: 0 }}
+                size="medium"
+              >
+                <Select
+                  defaultValue="Mumbai"
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                  }}
+                  MenuProps={{
+                    anchorOrigin: {
+                      vertical: "bottom",
+                      horizontal: "left",
+                    },
+                    transformOrigin: {
+                      vertical: "top",
+                      horizontal: "left",
+                    },
+                    getContentAnchorEl: null,
+                  }}
+                >
+                  {cities &&
+                    cities.map((city) => {
+                      return (
+                        <MenuItem value={city} key={city}>
+                          {city}
+                        </MenuItem>
+                      );
+                    })}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <TextField
+                color="secondary"
+                variant="outlined"
+                label="Filter Search"
+                size="medium"
+                className={classes.InnerComponent1}
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              />
+            </Grid>
+          </Grid>
         </Box>
       </Toolbar>
     </Container>

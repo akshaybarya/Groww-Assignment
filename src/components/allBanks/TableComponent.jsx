@@ -11,20 +11,32 @@ import {
 } from "../../utils/localStorageFunctions";
 
 const useStyles = makeStyles((theme) => ({
-  tableHead: {
+  TableHeadIncative: {
     height: 60,
-
+    transition: "0.25s",
+    backgroundColor: theme.palette.primary.dark,
+    "&:hover": {
+      cursor: "pointer",
+      fontWeight: "bold",
+    },
+  },
+  TableHeadActive: {
+    height: 60,
+    transition: "0.25s",
+    "&:nth-of-type(odd)": {
+      backgroundColor: theme.palette.primary.dark,
+    },
     "&:nth-of-type(even)": {
       backgroundColor: theme.palette.action.hover,
     },
-    // hide last border
-    "&:last-child td, &:last-child th": {
-      border: 0,
+    "&:hover": {
+      cursor: "pointer",
+      fontWeight: "bold",
     },
   },
 }));
 
-const TableComponent = ({ data }) => {
+const TableComponent = ({ data, tableHeadClassName }) => {
   const temp = data;
   const { ifsc, address, bank_id, branch, bank_name } = temp;
   const classes = useStyles();
@@ -69,7 +81,12 @@ const TableComponent = ({ data }) => {
   }
 
   return (
-    <TableRow key={ifsc} onClick={onClick} className={classes.tableHead}>
+    <TableRow
+      key={ifsc}
+      onClick={onClick}
+      className={classes[tableHeadClassName]}
+      hover
+    >
       <TableCell sx={{ minWidth: 500 }} align="center">
         <Link className="Link" to={`/bank-details/${ifsc}`}>
           {bank_name}
@@ -97,7 +114,11 @@ const TableComponent = ({ data }) => {
       </TableCell>
       <TableCell align="center" padding="checkbox">
         <IconButton onClick={alterFavourites}>
-          {favourite ? <StarRounded color="primary" /> : <StarBorderRounded />}
+          {favourite ? (
+            <StarRounded color="secondary" />
+          ) : (
+            <StarBorderRounded />
+          )}
         </IconButton>
       </TableCell>
     </TableRow>

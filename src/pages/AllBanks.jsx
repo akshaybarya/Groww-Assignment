@@ -26,11 +26,15 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   TableHead: {
-    backgroundColor: "#00d09c",
+    backgroundColor: theme.palette.primary.main,
+    height: 80,
   },
   TableHeading: {
-    color: "#FFFF",
+    color: theme.palette.primary.contrastText,
     fontWeight: "bold",
+  },
+  TableFooter: {
+    backgroundColor: theme.palette.secondary.light,
   },
 }));
 
@@ -54,6 +58,8 @@ const AllBanks = () => {
   const [search, setSearch] = useState("");
   const [type, setType] = useState("bank_name");
   const [city, setCity] = useState("Mumbai");
+  const [tableHeadClassName, setTableHeadClassName] =
+    useState("TableHeadActive");
   const debouncedTerm = useDebounce(search, 500);
 
   // Filetering functions
@@ -119,7 +125,11 @@ const AllBanks = () => {
         city={city}
         setCity={setCity}
       />
-      <TableContainer component={Paper}>
+      <TableContainer
+        component={Paper}
+        onMouseEnter={(e) => setTableHeadClassName("TableHeadIncative")}
+        onMouseLeave={(e) => setTableHeadClassName("TableHeadActive")}
+      >
         <Table className={classes.Table}>
           <colgroup>
             <col width="20%" />
@@ -155,12 +165,12 @@ const AllBanks = () => {
           </TableHead>
           <TableBody>
             {currentData &&
-              currentData.map((data, index) => {
+              currentData.map((data) => {
                 return (
                   <TableComponent
                     data={data}
+                    tableHeadClassName={tableHeadClassName}
                     key={data.ifsc}
-                    toggle={index % 2 === 0}
                   />
                 );
               })}
@@ -174,6 +184,7 @@ const AllBanks = () => {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          className={classes.TableFooter}
         />
       </TableContainer>
     </Container>

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
   Button,
   Container,
+  FormControlLabel,
   makeStyles,
+  Switch,
   Toolbar,
   Typography,
 } from "@material-ui/core";
+import { useToggleTheme } from "../../context/Context";
 
 // Styles
 
@@ -51,6 +54,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
+  const [theme, setTheme] = useState(false);
+  const { toggleTheme, dark } = useToggleTheme();
+
+  useEffect(() => {
+    setTheme(dark);
+  }, [dark]);
+
+  const handleChangeDense = (e) => {
+    toggleTheme();
+    setTheme(!theme);
+  };
 
   return (
     <AppBar position="static" className={classes.Container}>
@@ -73,6 +87,18 @@ const Navbar = () => {
               Favourites
             </Button>
           </Link>
+
+          <FormControlLabel
+            color="default"
+            control={
+              <Switch
+                color="default"
+                checked={theme}
+                onChange={handleChangeDense}
+              />
+            }
+            label={theme ? "Light theme" : "Dark theme"}
+          />
         </Toolbar>
       </Container>
     </AppBar>

@@ -26,11 +26,15 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   TableHead: {
-    backgroundColor: "#00d09c",
+    backgroundColor: theme.palette.primary.main,
+    height: 80,
   },
   TableHeading: {
-    color: "#FFFF",
+    color: theme.palette.primary.contrastText,
     fontWeight: "bold",
+  },
+  TableFooter: {
+    backgroundColor: theme.palette.primary.main,
   },
 }));
 
@@ -50,6 +54,8 @@ const Favourite = () => {
   const [currentData, setCurrentData] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [tableHeadClassName, setTableHeadClassName] =
+    useState("TableHeadActive");
 
   // getting data From Localstorage and seting to State
   useEffect(() => {
@@ -84,7 +90,11 @@ const Favourite = () => {
     <div>
       <Container style={{ paddingBottom: 125 }}>
         <Appbar />
-        <TableContainer component={Paper}>
+        <TableContainer
+          component={Paper}
+          onMouseEnter={(e) => setTableHeadClassName("TableHeadIncative")}
+          onMouseLeave={(e) => setTableHeadClassName("TableHeadActive")}
+        >
           <Table className={classes.Table}>
             <colgroup>
               <col width="20%" />
@@ -139,6 +149,7 @@ const Favourite = () => {
                       data={data}
                       key={data.ifsc}
                       functions={{ bankData, setbankData }}
+                      tableHeadClassName={tableHeadClassName}
                     />
                   );
                 })}
@@ -152,6 +163,7 @@ const Favourite = () => {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
+            className={classes.TableFooter}
           />
         </TableContainer>
       </Container>
