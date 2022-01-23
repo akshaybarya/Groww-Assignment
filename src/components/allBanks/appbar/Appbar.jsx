@@ -5,7 +5,6 @@ import {
   Container,
   FormControl,
   Grid,
-  makeStyles,
   MenuItem,
   Select,
   TextField,
@@ -13,6 +12,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import FilterListIcon from "@material-ui/icons/FilterList";
+import { useStyles } from "./Styles";
 
 const cities = ["Mumbai", "Delhi", "Chennai", "Pune", "Jaipur"];
 
@@ -23,36 +23,6 @@ const categories = [
   { name: "Bank ID", value: "bank_id" },
   { name: "Address", value: "address" },
 ];
-
-// Styles
-
-const useStyles = makeStyles((theme) => ({
-  Container: {
-    marginBottom: 25,
-    height: "inherit",
-  },
-  LogoBox: {
-    flexGrow: 1,
-    display: "flex",
-    alignItems: "start",
-  },
-
-  Toolbar: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-
-  InnerComponent1: {
-    width: 250,
-  },
-  InnerComponent2: {
-    width: 150,
-  },
-  InnerComponent3: {
-    width: 150,
-  },
-}));
 
 // Rendering The Function
 

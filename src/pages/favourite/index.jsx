@@ -11,32 +11,12 @@ import {
   TableBody,
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import TableComponent from "../components/favourite/TableComponent";
-import { makeStyles } from "@material-ui/styles";
-import Spinner from "../components/common/Spinner";
-import Appbar from "../components/favourite/Appbar";
-import { fetchFavourite } from "../utils/localStorageFunctions";
+import TableComponent from "../../components/favourite/table/TableComponent";
+import Spinner from "../../components/common/spinner/Spinner";
+import Appbar from "../../components/favourite/appbar/Appbar";
+import { fetchFavourite } from "../../utils/localStorageFunctions";
 import { FolderOpen } from "@material-ui/icons";
-
-const useStyles = makeStyles((theme) => ({
-  Table: {
-    minWidth: 650,
-    tableLayout: "fixed",
-    width: "100%",
-    height: "100%",
-  },
-  TableHead: {
-    backgroundColor: theme.palette.primary.main,
-    height: 80,
-  },
-  TableHeading: {
-    color: theme.palette.primary.contrastText,
-    fontWeight: "bold",
-  },
-  TableFooter: {
-    backgroundColor: theme.palette.primary.main,
-  },
-}));
+import { useStyles } from "./Styles";
 
 const tableHeadings = [
   "BANK",

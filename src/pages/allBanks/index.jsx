@@ -11,32 +11,12 @@ import {
   TableRow,
   Typography,
 } from "@material-ui/core";
-import Spinner from "../components/common/Spinner";
-import { makeStyles } from "@material-ui/styles";
-import TableComponent from "../components/allBanks/TableComponent";
-import Appbar from "../components/allBanks/Appbar";
-import { useDebounce } from "../utils/useDebouce";
-import { fetchDataFromLocalStorge } from "../utils/localStorageFunctions";
-
-const useStyles = makeStyles((theme) => ({
-  Table: {
-    minWidth: 650,
-    tableLayout: "fixed",
-    width: "100%",
-    height: "100%",
-  },
-  TableHead: {
-    backgroundColor: theme.palette.primary.main,
-    height: 80,
-  },
-  TableHeading: {
-    color: theme.palette.primary.contrastText,
-    fontWeight: "bold",
-  },
-  TableFooter: {
-    backgroundColor: theme.palette.secondary.light,
-  },
-}));
+import Spinner from "../../components/common/spinner/Spinner";
+import TableComponent from "../../components/allBanks/table/TableComponent";
+import Appbar from "../../components/allBanks/appbar/Appbar";
+import { useDebounce } from "../../utils/useDebouce";
+import { fetchDataFromLocalStorge } from "../../utils/localStorageFunctions";
+import { useStyles } from "./Styles";
 
 const tableHeadings = [
   "BANK",

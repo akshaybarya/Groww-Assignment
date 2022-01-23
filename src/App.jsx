@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Paper } from "@material-ui/core";
 // All Page Components
-import AllBanks from "./pages/AllBanks";
-import BankDetails from "./pages/BankDetails";
-import Favourite from "./pages/Favourite";
+import AllBanks from "./pages/allBanks";
+import BankDetails from "./pages/bankDetails/index";
+import Favourite from "./pages/favourite/index";
 import PageNotFound from "./pages/PageNotFound";
-import Navbar from "./components/common/Navbar";
+import Navbar from "./components/common/navbar/Navbar";
 // importing CSS
 import "./App.css";
 import { CustomThemeProvider } from "./context/Context";

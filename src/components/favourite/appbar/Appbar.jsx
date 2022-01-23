@@ -1,19 +1,6 @@
 import React from "react";
-import { Box, Container, makeStyles, Typography } from "@material-ui/core";
-
-// Styles
-
-const useStyles = makeStyles((theme) => ({
-  Container: {
-    marginBottom: 25,
-    height: "inherit",
-  },
-  LogoBox: {
-    flexGrow: 1,
-    display: "flex",
-    alignItems: "start",
-  },
-}));
+import { Box, Container, Typography } from "@material-ui/core";
+import { useStyles } from "./Styles";
 
 // Rendering The Function
 

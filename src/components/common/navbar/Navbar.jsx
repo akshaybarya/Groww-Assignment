@@ -6,49 +6,12 @@ import {
   Button,
   Container,
   FormControlLabel,
-  makeStyles,
   Switch,
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { useToggleTheme } from "../../context/Context";
-
-// Styles
-
-const useStyles = makeStyles((theme) => ({
-  Container: {
-    height: 60,
-  },
-  LogoBox: {
-    flexGrow: 1,
-    display: "flex",
-    alignItems: "start",
-  },
-  Logo: {
-    fontWeight: "bold",
-    marginLeft: 50,
-    [theme.breakpoints.down("md")]: {
-      fontSize: 12,
-      marginLeft: 5,
-    },
-  },
-  Button1: {
-    marginRight: 40,
-    fontSize: 17,
-
-    [theme.breakpoints.down("md")]: {
-      marginRight: 10,
-      fontSize: 12,
-    },
-  },
-  Button2: {
-    marginRight: 50,
-    fontSize: 17,
-    [theme.breakpoints.down("md")]: {
-      fontSize: 12,
-    },
-  },
-}));
+import { useToggleTheme } from "../../../context/Context";
+import { useStyles } from "./Styles";
 
 // Rendering The Function
 
