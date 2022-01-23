@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {
-  Button,
-  Container,
-  Drawer,
-  FormControlLabel,
-  IconButton,
   List,
   ListItem,
   ListItemSecondaryAction,
@@ -47,6 +42,9 @@ const DrawerComponent = ({ theme, handleChangeDense }) => {
   );
 };
 
-DrawerComponent.propTypes = {};
+DrawerComponent.propTypes = {
+  theme: PropTypes.bool.isRequired,
+  handleChangeDense: PropTypes.func.isRequired,
+};
 
 export default DrawerComponent;

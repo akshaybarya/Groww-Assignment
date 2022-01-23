@@ -7,12 +7,11 @@ import {
   TextField,
 } from "@material-ui/core";
 import React from "react";
-import { useStyles } from "../Styles";
+import PropTypes from "prop-types";
 
 const DrawerComponent = ({
   data: { city, setCity, cities, type, setType, categories, setSearch, search },
 }) => {
-  const classes = useStyles();
   return (
     <>
       <List>
@@ -105,6 +104,9 @@ const DrawerComponent = ({
       </List>
     </>
   );
+};
+DrawerComponent.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default DrawerComponent;
