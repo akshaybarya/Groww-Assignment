@@ -101,6 +101,7 @@ const TableComponent = ({ data, tableHeadClassName }) => {
 
 TableComponent.proptype = {
   data: PropTypes.object.isRequired,
+  tableHeadClassName: PropTypes.string.isRequired,
 };
 
 export default TableComponent;

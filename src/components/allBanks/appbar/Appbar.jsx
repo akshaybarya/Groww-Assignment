@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import {
   Box,
   Container,
@@ -13,16 +13,7 @@ import {
 } from "@material-ui/core";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import { useStyles } from "./Styles";
-
-const cities = ["Mumbai", "Delhi", "Chennai", "Pune", "Jaipur"];
-
-const categories = [
-  { name: "Bank", value: "bank_name" },
-  { name: "Ifsc", value: "ifsc" },
-  { name: "Branch", value: "branch" },
-  { name: "Bank ID", value: "bank_id" },
-  { name: "Address", value: "address" },
-];
+import { categories, cities } from "../../../utils/constants";
 
 // Rendering The Function
 
@@ -148,8 +139,7 @@ const Appbar = ({ search, setSearch, type, setType, city, setCity }) => {
   );
 };
 
-/*
-Appbar.proptypes = {
+Appbar.propTypes = {
   search: PropTypes.string.isRequired,
   setSearch: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
@@ -157,5 +147,5 @@ Appbar.proptypes = {
   city: PropTypes.string.isRequired,
   setCity: PropTypes.func.isRequired,
 };
-*/
+
 export default Appbar;
