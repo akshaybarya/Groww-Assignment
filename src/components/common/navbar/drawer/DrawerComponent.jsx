@@ -8,11 +8,8 @@ import {
   Switch,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { useStyles } from "./Style";
 
 const DrawerComponent = ({ theme, handleChangeDense }) => {
-  const classes = useStyles();
-
   return (
     <>
       <List>

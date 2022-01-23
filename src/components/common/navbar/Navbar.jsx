@@ -7,6 +7,7 @@ import {
   Collapse,
   Container,
   IconButton,
+  Switch,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -16,7 +17,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { useToggleTheme } from "../../../context/Context";
 import { useStyles } from "./Styles";
 import DrawerComponent from "./drawer/DrawerComponent";
-import { Brightness4, Brightness7 } from "@material-ui/icons";
 
 // Rendering The Function
 
@@ -73,15 +73,20 @@ const Navbar = () => {
                 </Button>
               </Link>
 
-              <Button
-                color="inherit"
-                className={classes.Button2}
-                onClick={handleChangeDense}
-                startIcon={theme ? <Brightness7 /> : <Brightness4 />}
-                size="small"
+              <Typography
+                variant="h6"
+                component="h3"
+                className={classes.ThemeButton}
               >
-                {theme ? "LIGHT THEME" : "DARK THEME"}
-              </Button>
+                {theme ? "LIGHT THEME " : "DARK THEME "}
+                <Switch
+                  edge="end"
+                  color="default"
+                  checked={theme}
+                  onChange={handleChangeDense}
+                  size="medium"
+                />
+              </Typography>
             </>
           )}
         </Toolbar>

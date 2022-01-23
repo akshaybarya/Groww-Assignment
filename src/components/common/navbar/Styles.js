@@ -32,8 +32,15 @@ export const useStyles = makeStyles((theme) => ({
   Button2: {
     marginRight: 50,
     fontSize: 17,
+    "&hover": {
+      backgroundColor: "transparent",
+    },
     [theme.breakpoints.down("md")]: {
       fontSize: 12,
     },
+  },
+  ThemeButton: {
+    fontSize: 17,
+    marginRight: 50,
   },
 }));
