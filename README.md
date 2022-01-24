@@ -32,4 +32,4 @@ Theis is a basic single Page React Application to show the bank data recieved fr
 
 ![Groww-Assignment - Google Chrome 23-01-2022 17_10_22](https://user-images.githubusercontent.com/76679278/150677140-5dca46ac-2a7d-4078-a9c9-cf2ec7c98424.png)
 
-#### The Application is Developed using React and Material UI.
+#### The Application is Developed using React JS and Material UI.
