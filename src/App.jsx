@@ -25,7 +25,7 @@ const App = () => {
               <Route exact path="/all-banks" element={<AllBanks />} />
               <Route exact path="/favourites" element={<Favourite />} />
               <Route path="/bank-details/:id" element={<BankDetails />} />
-              <Route path="/" element={<PageNotFound />} />
+              <Route element={<PageNotFound />} />
             </Routes>
           </div>
         </Paper>
