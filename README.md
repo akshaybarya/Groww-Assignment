@@ -6,7 +6,7 @@ Heroku - https://groww-assignment-akshay-barya.herokuapp.com
 
 Netlify - https://groww-assignment-akshay-barya.netlify.app
 
-Theis is a basic single Page React Application to show the bank data recieved from API for 5 cities Mumbai, Delhi, Pune, Jaipur, Chennai. The Application is highly user friendly and user can change Theme from light to dark and vise-versa by default theme is light. Users can also add Banks to Favourite List and access them directly. The web Application is also Mobile Friendly so can be easily accessed from mobile aswell.
+Theis is a basic single Page React Application to show the bank data recieved from API for 5 cities Mumbai, Delhi, Pune, Jaipur, Chennai. The Application is highly user friendly and user can change Theme from light to dark and vise-versa by default theme is light. Users can also add Banks to Favourite List and access them directly. The web Application is also Mobile Friendly so can be easily accessed from Mobile aswell.
 
 ## Landing Page || Home Page || "/all-banks" Page Light Theme Desktop View
 
